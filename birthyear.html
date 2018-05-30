@@ -1,0 +1,42 @@
+<!doctype html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <center>
+        <form style="margin-top: 100px">
+            <input style="height:30px; width:400px; padding:5px" type="number" name="number" id="number" placeholder="Pls enter your age"
+            />
+            <input style="height:43px; width:80px" type="button" value="Find year" id="button" />
+            <p id="year">year</p>
+        </form>
+    </center>
+
+    <script type="text/javascript">
+        function calculate() { // function definition
+            var number = document.getElementById("number").value;
+
+            if (number == "" || number == 0) {
+                window.alert("pls enter a valid age");
+                return;
+            }
+            var date = new  Date().getFullYear();
+
+            var fin = date - number;
+
+            document.getElementById("year").style.display = "block";
+            document.getElementById("year").innerHTML = "your birth year is"+""+fin;
+        }
+
+        document.getElementById("year").style.display = "none";
+        document.getElementById("button").onclick = function() {
+            calculate();
+            };
+
+    </script>
+
+</body>
+
+</html>
